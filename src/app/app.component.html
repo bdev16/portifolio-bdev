@@ -1,11 +1,186 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portifolio Bdev</title>
-</head>
-<body>
-    
-</body>
-</html>
+<header class="cabecalho">
+  <nav class="cabecalho__menu">
+    <a class="cabecalho__menu__links" href="#titulo">Home</a>
+    <a class="cabecalho__menu__links" href="#sobre_mim">Sobre mim</a>
+    <a class="cabecalho__menu__links" href="#habilidades">Habilidades</a>
+    <a class="cabecalho__menu__links" href="#trabalhos_projetos">Projetos</a>
+    <a class="cabecalho__menu__links" href="#contatos">Contatos</a>
+  </nav>
+</header>
+<main>
+  <section class="caixa__1" id="titulo">
+    <img src="/Group 4.png" class="caixa__1__titulo">
+  </section>
+  <section class="caixa__2" id="sobre_mim">
+    <div class="caixa__2__textos">
+      <div class="caixa__2__textos__titulo">
+          <h1>Sobre mim</h1>
+      </div>
+      <h2>Olá, pessoal!</h2>
+      <p>Olá, meu nome é Bruno, sou formado no curso Análise e Desenvolvimento de Sistemas na  Faculdade Católica Imaculada Conceição do Recife por meio do programa Embarque Digital,  disponibilizado pela Prefeitura do Recife. Me considero uma pessoa amigável e que gosta de  trabalhar em equipe, contribuir para a resolução de problemas e obter novos conhecimentos.</p>
+    </div>
+    <img src="/Group 5 (2).png" class="caixa__2__imagem">  
+  </section>
+  <section class="habilidades" id="habilidades">
+    <div class="habilidades__navegacao">
+      <div class="habilidades__navegacao__titulo">
+        <h1>Tecnologias e Habilidades</h1>
+      </div>
+      <div class="habilidades__navegacao__botoes">
+        <a (click)="owlCarouselRef.prev()"><img src="/seta-esquerda.png"></a>
+        <a (click)="owlCarouselRef.next()"><img src="/seta-direita.png"></a>
+      </div>
+    </div>
+    <div class="habilidades__slide">
+      <owl-carousel-o [options]=" customOptions" #owlCarouselRef> 
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-c-sharp-logo-100.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>C# | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-.net-framework-96.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>.NET | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-python-100.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>Python | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/js.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>JavaScript | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-angular-100.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>Angular | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-html5-96.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>HTML5| Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-css3-100.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>CSS3 | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/servidor-sql.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>SQL | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-git-100.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>Git | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template carouselSlide>
+            <div class="habilidades__slide__icons">
+              <div class="habilidades__slide__icons__icon">
+                <img src="/icons8-git-96.png">
+              </div>
+              <div class="habilidades__slide__icons__texto">
+                <h2>GitHub | Básico</h2>
+              </div>
+            </div>
+          </ng-template>
+      </owl-carousel-o> 
+    </div>
+  </section>
+  <section class="projetos" id="trabalhos_projetos">
+    <div class="projetos__navegacao">
+      <div class="projetos__navegacao__titulo">
+        <h1>Trabalhos e Projetos</h1>
+      </div>
+      <div class="projetos__navegacao__botoes">
+        <a (click)="owlCarouselRef2.prev()"><img src="/seta-esquerda.png"></a>
+        <a (click)="owlCarouselRef2.next()"><img src="/seta-direita.png"></a>
+      </div>
+    </div>
+    <div class="projetos__slide">
+      <owl-carousel-o [options]="customOptions2" #owlCarouselRef2>
+        <ng-template carouselSlide class="projetos__slide__container__container">
+          <div class="projetos__slide__container">
+            <div class="projetos__slide__container__img">
+              <img src="TaskListProject.jpeg" >
+            </div>
+            <div class="projetos__slide__container__textos">
+              <h1>TaskList</h1>
+              <h2>C#; ASP.NET; ANGULAR; POSTGRES;</h2>
+              <p>
+                TaskList é uma aplicação web que tem o objetivo de criar e gerenciar tarefas, permitindo que os usuários 
+                criem e gerenciem suas próprias tarefas, definindo se elas foram concluídas ou não. O back-end da aplicação 
+                foi desenvolvido utilizando a linguagem C# e o ASP.NET, enquanto o front-end foi desenvolvido utilizando o Angular.
+              </p>
+              <div class="projetos__slide__container__textos__botoes">
+                <a (click)="openDialog()"><p>Github</p></a>
+                <a href="https://front-tasklist.vercel.app/" target="_blank"><p>Deploy</p></a>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </section>
+  <section class="contatos" id="contatos">
+    <div class="contatos__navegacao">
+      <div class="contatos__navegacao__titulo">
+        <h1>Formas de Contato</h1>
+      </div>
+    </div>
+    <div class="contatos__links">
+      <a href="https://www.linkedin.com/in/brunoantonioalexandrinodasilva/" target="_blank"><p>LinkedIn</p></a>
+      <a href="https://github.com/bdev16" target="_blank"><p>GitHub</p></a>
+      <a href="brunoantonio1602@hotmail.com" target="_blank"><p>Gmail</p></a>
+    </div>
+  </section>
+</main>
