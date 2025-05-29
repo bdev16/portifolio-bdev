@@ -33,106 +33,18 @@
     </div>
     <div class="habilidades__slide">
       <owl-carousel-o [options]=" customOptions" #owlCarouselRef> 
+        @for(skill of skillList; track skill) {
           <ng-template carouselSlide>
             <div class="habilidades__slide__icons">
               <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-c-sharp-logo-100.png">
+                <img [src]="skill.skillImg">
               </div>
               <div class="habilidades__slide__icons__texto">
-                <h2>C# | Básico</h2>
+                <h2>{{ skill.skillDescription }}</h2>
               </div>
             </div>
           </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-.net-framework-96.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>.NET | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-python-100.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>Python | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/js.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>JavaScript | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-angular-100.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>Angular | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-html5-96.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>HTML5| Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-css3-100.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>CSS3 | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/servidor-sql.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>SQL | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-git-100.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>Git | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template carouselSlide>
-            <div class="habilidades__slide__icons">
-              <div class="habilidades__slide__icons__icon">
-                <img src="/icons8-git-96.png">
-              </div>
-              <div class="habilidades__slide__icons__texto">
-                <h2>GitHub | Básico</h2>
-              </div>
-            </div>
-          </ng-template>
+        }
       </owl-carousel-o> 
     </div>
   </section>
@@ -148,26 +60,24 @@
     </div>
     <div class="projetos__slide">
       <owl-carousel-o [options]="customOptions2" #owlCarouselRef2>
-        <ng-template carouselSlide class="projetos__slide__container__container">
-          <div class="projetos__slide__container">
-            <div class="projetos__slide__container__img">
-              <img src="TaskListProject.jpeg" >
-            </div>
-            <div class="projetos__slide__container__textos">
-              <h1>TaskList</h1>
-              <h2>C#; ASP.NET; ANGULAR; POSTGRES;</h2>
-              <p>
-                TaskList é uma aplicação web que tem o objetivo de criar e gerenciar tarefas, permitindo que os usuários 
-                criem e gerenciem suas próprias tarefas, definindo se elas foram concluídas ou não. O back-end da aplicação 
-                foi desenvolvido utilizando a linguagem C# e o ASP.NET, enquanto o front-end foi desenvolvido utilizando o Angular.
-              </p>
-              <div class="projetos__slide__container__textos__botoes">
-                <a (click)="openDialog()"><p>Github</p></a>
-                <a href="https://front-tasklist.vercel.app/" target="_blank"><p>Deploy</p></a>
+        @for(project of projectList; track project) {
+          <ng-template carouselSlide class="projetos__slide__container__container">
+            <div class="projetos__slide__container">
+              <div class="projetos__slide__container__img">
+                <img [src]="project.projectImg" >
+              </div>
+              <div class="projetos__slide__container__textos">
+                <h1>{{ project.projectTitle }}</h1>
+                <h2>{{ project.projectTechnologies }}</h2>
+                <p>{{ project.projectDescripiton }}</p>
+                <div class="projetos__slide__container__textos__botoes">
+                  <a (click)="openDialog(project)"><p>Github</p></a>
+                  <a [href]="project.projectDeployLink" target="_blank"><p>Deploy</p></a>
+                </div>
               </div>
             </div>
-          </div>
-        </ng-template>
+          </ng-template>
+        }
       </owl-carousel-o>
     </div>
   </section>

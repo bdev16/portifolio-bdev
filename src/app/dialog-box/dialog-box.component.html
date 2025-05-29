@@ -2,10 +2,10 @@
     <button mat-icon-button mat-dialog-close style="align-self: flex-end;"><mat-icon fontIcon="close"></mat-icon></button>
     <mat-dialog-content>
         <div class="link-buttons">
-            <a href="https://github.com/bdev16/TaskList" target="_blank" class="button-link">
+            <a [href]="data.projectGitHubBackEndLink" target="_blank" class="button-link">
                 BACK-END
             </a>
-            <a href="https://github.com/bdev16/front-tasklist" target="_blank" class="button-link">
+            <a [href]="data.projectGitHubFrontEndLink" target="_blank" class="button-link">
                 FRONT-END
             </a>
         </div>
