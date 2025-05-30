@@ -3,7 +3,8 @@ export class Skill{
     skillImg: string;
     skillDescription: string;
 
-    constructor(skillImg: string, skillDescription: string) {
+    constructor(skillNumber: number, skillImg: string, skillDescription: string) {
+        this.id = skillNumber;
         this.skillImg = skillImg;
         this.skillDescription = skillDescription;
     }

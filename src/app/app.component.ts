@@ -19,20 +19,21 @@ export class AppComponent {
   readonly dialog = inject(MatDialog);
 
   skillList: Skill[] = [
-    new Skill("/icons8-c-sharp-logo-100.png", "C# | Básico"),
-    new Skill("/icons8-.net-framework-96.png", ".NET | Básico"),
-    new Skill("/icons8-python-100.png", "Python | Básico"),
-    new Skill("/js.png", "JavaScript | Básico"),
-    new Skill("/icons8-angular-100.png", "Angular | Básico"),
-    new Skill("/icons8-html5-96.png", "HTML5| Básico"),
-    new Skill("/icons8-css3-100.png", "CSS3 | Básico"),
-    new Skill("/servidor-sql.png", "SQL | Básico"),
-    new Skill("/icons8-git-100.png", "Git | Básico"),
-    new Skill("/icons8-git-96.png", "GitHub | Básico"),
+    new Skill(0,"/icons8-c-sharp-logo-100.png", "C# | Básico"),
+    new Skill(1,"/icons8-.net-framework-96.png", ".NET | Básico"),
+    new Skill(2,"/icons8-python-100.png", "Python | Básico"),
+    new Skill(3,"/js.png", "JavaScript | Básico"),
+    new Skill(4,"/icons8-angular-100.png", "Angular | Básico"),
+    new Skill(5,"/icons8-html5-96.png", "HTML5| Básico"),
+    new Skill(6,"/icons8-css3-100.png", "CSS3 | Básico"),
+    new Skill(7,"/servidor-sql.png", "SQL | Básico"),
+    new Skill(8,"/icons8-git-100.png", "Git | Básico"),
+    new Skill(9,"/icons8-git-96.png", "GitHub | Básico"),
   ];
 
   projectList: Project[] = [
     new Project(
+      0,
       "TaskList",
       "C#; ASP.NET; ANGULAR; POSTGRES;",
        "TaskList é uma aplicação web que tem o objetivo de criar e gerenciar tarefas, permitindo que os usuários criem e gerenciem suas próprias tarefas, definindo se elas foram concluídas ou não. O back-end da aplicação" + 
@@ -69,7 +70,7 @@ export class AppComponent {
         items: 2
       },
       740: {
-        items: 3
+        items: 2
       },
       940: {
         items: 6
@@ -109,5 +110,9 @@ export class AppComponent {
     this.dialog.open(DialogBoxComponent, {
       data: project
     });
+  }
+
+  trackById(index: number, item: any): any {
+    return item.id || index; // id único preferencialmente
   }
 }

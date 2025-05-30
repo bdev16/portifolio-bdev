@@ -1,10 +1,38 @@
 <header class="cabecalho">
-  <nav class="cabecalho__menu">
+  <nav class="cabecalho__menu navbar navbar-light bg-light">
     <a class="cabecalho__menu__links" href="#titulo">Home</a>
     <a class="cabecalho__menu__links" href="#sobre_mim">Sobre mim</a>
     <a class="cabecalho__menu__links" href="#habilidades">Habilidades</a>
     <a class="cabecalho__menu__links" href="#trabalhos_projetos">Projetos</a>
     <a class="cabecalho__menu__links" href="#contatos">Contatos</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Navegação</h5>
+        <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#titulo">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#sobre_mim">Sobre mim</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#habilidades">Habilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#trabalhos_projetos">Projetos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#contatos">Contatos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
 </header>
 <main>
@@ -12,14 +40,18 @@
     <img src="/Group 4.png" class="caixa__1__titulo">
   </section>
   <section class="caixa__2" id="sobre_mim">
-    <div class="caixa__2__textos">
-      <div class="caixa__2__textos__titulo">
+    <div class="caixa__2__titulo">
           <h1>Sobre mim</h1>
-      </div>
-      <h2>Olá, pessoal!</h2>
-      <p>Olá, meu nome é Bruno, sou formado no curso Análise e Desenvolvimento de Sistemas na  Faculdade Católica Imaculada Conceição do Recife por meio do programa Embarque Digital,  disponibilizado pela Prefeitura do Recife. Me considero uma pessoa amigável e que gosta de  trabalhar em equipe, contribuir para a resolução de problemas e obter novos conhecimentos.</p>
     </div>
-    <img src="/Group 5 (2).png" class="caixa__2__imagem">  
+    <div class="caixa__2__conteudo">
+      <div class="caixa__2__conteudo__imagem">
+        <img src="/Group 5 (2).png" class="caixa__2__imagem">  
+      </div>
+      <div class="caixa__2__conteudo__textos">
+        <h2>Olá, pessoal!</h2>
+        <p>Olá, meu nome é Bruno, sou formado no curso Análise e Desenvolvimento de Sistemas na  Faculdade Católica Imaculada Conceição do Recife por meio do programa Embarque Digital,  disponibilizado pela Prefeitura do Recife. Me considero uma pessoa amigável e que gosta de  trabalhar em equipe, contribuir para a resolução de problemas e obter novos conhecimentos.</p>
+      </div>
+    </div>
   </section>
   <section class="habilidades" id="habilidades">
     <div class="habilidades__navegacao">
@@ -32,9 +64,9 @@
       </div>
     </div>
     <div class="habilidades__slide">
-      <owl-carousel-o [options]=" customOptions" #owlCarouselRef> 
-        @for(skill of skillList; track skill) {
-          <ng-template carouselSlide>
+      <owl-carousel-o class="habilidades__slide__carousel" [options]=" customOptions" #owlCarouselRef> 
+        @for(skill of skillList; track skill.id) {
+          <ng-template class="habilidades__slide__carousel__slide" carouselSlide>
             <div class="habilidades__slide__icons">
               <div class="habilidades__slide__icons__icon">
                 <img [src]="skill.skillImg">
@@ -60,7 +92,7 @@
     </div>
     <div class="projetos__slide">
       <owl-carousel-o [options]="customOptions2" #owlCarouselRef2>
-        @for(project of projectList; track project) {
+        @for(project of projectList; track project.id) {
           <ng-template carouselSlide class="projetos__slide__container__container">
             <div class="projetos__slide__container">
               <div class="projetos__slide__container__img">
@@ -90,7 +122,7 @@
     <div class="contatos__links">
       <a href="https://www.linkedin.com/in/brunoantonioalexandrinodasilva/" target="_blank"><p>LinkedIn</p></a>
       <a href="https://github.com/bdev16" target="_blank"><p>GitHub</p></a>
-      <a href="brunoantonio1602@hotmail.com" target="_blank"><p>Gmail</p></a>
+      <a href="mailto:brunoantonio1602@hotmail.com" target="_blank"><p>Gmail</p></a>
     </div>
   </section>
 </main>
